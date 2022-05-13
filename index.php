@@ -25,10 +25,21 @@ function price ($price) {
 
 function data_end () {
     $current = time();
-    $tomorrowMidnight = mktime(0, 0, 0, date('n', $current), date('j', $current) + 1);
-    $unix = floor ($tomorrowMidnight - $current);
-    $format = 'H:i';
-    return date($format, $unix);
+    $tomorrowMidnight = strtotime('tomorrow');
+    $unix = $tomorrowMidnight - $current;
+
+    $h = floor($unix / 3600);
+    $m = floor(($unix % 3600) / 60);
+
+    if ($h < 10) {
+        $h = sprintf("%02d", $h);
+    }
+
+    if ($m < 10) {
+        $m = sprintf("%02d", $m);
+    }
+
+    return "{$h}:{$m}";
 }
 
 ?>
