@@ -14,6 +14,15 @@ $goods = [
     ['Name'=>'Маска Oakley Canopy','Category'=>'Разное','price'=>5400,'Url'=>'img/lot-6.jpg'],
 ];
 
+function price ($price) {
+    $price =ceil($price);
+    if ($price >= 1000){
+        $result = number_format($price,0,' ',' ');
+    }
+    else $result = $price;
+    return $result . ' ₽';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -92,7 +101,7 @@ $goods = [
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?php echo $g['price']?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?php echo price($g['price'])?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
