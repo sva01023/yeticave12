@@ -23,6 +23,14 @@ function price ($price) {
     return $result . ' ₽';
 }
 
+function data_end () {
+    $current = time();
+    $tomorrowMidnight = mktime(0, 0, 0, date('n', $current), date('j', $current) + 1);
+    $unix = floor ($tomorrowMidnight - $current);
+    $format = 'H:i';
+    return date($format, $unix);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -104,7 +112,7 @@ function price ($price) {
                             <span class="lot__cost"><?php echo price($g['price'])?></span>
                         </div>
                         <div class="lot__timer timer">
-                            12:23
+                            <?php echo data_end() ?>
                         </div>
                     </div>
                 </div>
