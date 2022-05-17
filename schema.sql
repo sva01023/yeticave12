@@ -20,7 +20,7 @@ CREATE TABLE `goods` (
   `id_goods` int(11) NOT NULL,
   `goods_date_reg` date NOT NULL,
   `goods_name` varchar(255) NOT NULL,
-  `goods_info` varchar(255) NOT NULL,
+  `goods_info` varchar(535) NOT NULL,
   `goods_img` varchar(255) NOT NULL,
   `goods_price` int(11) NOT NULL,
   `goods_date_end` date NOT NULL,
