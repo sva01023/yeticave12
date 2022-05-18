@@ -41,5 +41,7 @@ function include_template($name, $data) {
     return $result;
 }
 
+$is_auth = rand(0, 1);
+$user_name = 'Пользователь31234';
 
 
