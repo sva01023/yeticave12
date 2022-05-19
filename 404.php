@@ -2,61 +2,85 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $title ?></title>
+    <title>DC Ply Mens 2016/2017 Snowboard</title>
     <link href="../css/normalize.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="page-wrapper">
-
     <header class="main-header">
         <div class="main-header__container container">
             <h1 class="visually-hidden">YetiCave</h1>
-            <a class="main-header__logo">
+            <a class="main-header__logo" href="index.html">
                 <img src="../img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
             </a>
             <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru" autocomplete="off">
                 <input type="search" name="search" placeholder="Поиск лота">
                 <input class="main-header__search-btn" type="submit" name="find" value="Найти">
             </form>
-            <a class="main-header__add-lot button" href="pages/add-lot.html">Добавить лот</a>
-
+            <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
             <nav class="user-menu">
-
-                <!-- здесь должен быть PHP код для показа меню и данных пользователя -->
-                <?php if ($is_auth == 1): ?>
-                    <div class="user-menu__image">
-                        <img src="img/user.jpg" width="40" height="40" alt="Пользователь">
-                    </div>
-                    <div class="user-menu__logged">
-                        <p><?php echo $user_name; ?></p>
-                    </div>
-                <?php else: ?>
-                    <ul class="user-menu__list">
-                        <li class="user-menu__item">
-                            <a href="#">Регистрация</a>
-                        </li>
-                        <li class="user-menu__item">
-                            <a href="#">Вход</a>
-                        </li>
-                    </ul>
-                <?php endif; ?>
+                <ul class="user-menu__list">
+                    <li class="user-menu__item">
+                        <a href="sign-up.html">Регистрация</a>
+                    </li>
+                    <li class="user-menu__item">
+                        <a href="login.html">Вход</a>
+                    </li>
+                </ul>
             </nav>
         </div>
     </header>
-
-        <?php echo $main ?>
+    <main>
+        <nav class="nav">
+            <ul class="nav__list container">
+                <li class="nav__item">
+                    <a href="all-lots.html">Доски и лыжи</a>
+                </li>
+                <li class="nav__item">
+                    <a href="all-lots.html">Крепления</a>
+                </li>
+                <li class="nav__item">
+                    <a href="all-lots.html">Ботинки</a>
+                </li>
+                <li class="nav__item">
+                    <a href="all-lots.html">Одежда</a>
+                </li>
+                <li class="nav__item">
+                    <a href="all-lots.html">Инструменты</a>
+                </li>
+                <li class="nav__item">
+                    <a href="all-lots.html">Разное</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="lot-item container">
+            <h2>404 Страница не найдена</h2>
+            <p>Данной страницы не существует на сайте.</p>
+        </section>
+    </main>
 </div>
-
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <!--заполните этот список из массива категорий-->
-            <?php foreach($categories as $category) { ?>
-                <li class="nav__item">
-                    <a href="pages/all-lots.html"><?php echo $category["category_name"]?></a>
-                </li>
-            <?php } ?>
+            <li class="nav__item">
+                <a href="all-lots.html">Доски и лыжи</a>
+            </li>
+            <li class="nav__item">
+                <a href="all-lots.html">Крепления</a>
+            </li>
+            <li class="nav__item">
+                <a href="all-lots.html">Ботинки</a>
+            </li>
+            <li class="nav__item">
+                <a href="all-lots.html">Одежда</a>
+            </li>
+            <li class="nav__item">
+                <a href="all-lots.html">Инструменты</a>
+            </li>
+            <li class="nav__item">
+                <a href="all-lots.html">Разное</a>
+            </li>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
@@ -100,8 +124,5 @@
         </div>
     </div>
 </footer>
-
-<script src="flatpickr.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
