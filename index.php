@@ -1,6 +1,6 @@
 <?php
 require_once('functions.php');
-require_once('connectDB.php');
+require_once('data.php');
 
 
 $main = include_template(

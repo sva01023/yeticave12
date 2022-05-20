@@ -1,4 +1,5 @@
 <?php
+
 $link = mysqli_connect('127.0.0.1', 'root', '','schema');
 mysqli_set_charset($link, "utf8");
 
@@ -8,11 +9,11 @@ if (!$link) {
 }
 
 else {
-    $sql = "SELECT * FROM category";
-    $result = mysqli_query($link, $sql);
+    $sql1 = "SELECT * FROM category";
+    $result1 = mysqli_query($link, $sql1);
 
-    if ($result) {
-        $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if ($result1) {
+        $categories = mysqli_fetch_all($result1, MYSQLI_ASSOC);
     }
     else {
         $error = mysqli_error($link);
@@ -20,15 +21,16 @@ else {
     }
 
 
-    $sql = 'SELECT * FROM goods left join category on goods.id_category=category.id_category';
-    $result = mysqli_query($link, $sql);
+    $sql2 = 'SELECT * FROM goods inner join category on goods.id_category=category.id_category';
+    $result2 = mysqli_query($link, $sql2);
 
-    if ($result) {
-        $goods = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    if ($result2) {
+        $goods = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     }
     else {
         $error = mysqli_error($link);
         $main = include_template('error.php', ['error' => $error]);
     }
 }
+
 ?>
