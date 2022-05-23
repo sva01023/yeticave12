@@ -20,6 +20,7 @@ if (isset($_GET["id_goods"]))
     }
 }
 
+
     $main = include_template(
         'lot.php',
         [

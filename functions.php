@@ -1,5 +1,7 @@
 <?php
 
+function checking(array $data, array )
+
 function price ($price) {
     $price =ceil($price);
     if ($price >= 1000){
