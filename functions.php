@@ -1,6 +1,6 @@
 <?php
 
-function checking(array $data, array )
+/* function checking(array $data, array ) */
 
 function price ($price) {
     $price =ceil($price);
